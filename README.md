@@ -1,4 +1,4 @@
-# SkinnyScaffold
+# Skinny Scaffold
 
 Skinny scaffolds for Rails 4. Currently defaults to Haml but I may add ERB support eventually. Dunno.
 
