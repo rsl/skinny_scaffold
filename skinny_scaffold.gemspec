@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = SkinnyScaffold::VERSION
   spec.authors       = ["RSL"]
   spec.email         = ["sconds@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Skinny scaffolds for Rails 4}
+  # spec.summary       = %q{}
+  spec.homepage      = "https://github.com/rsl/skinny_scaffold"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
