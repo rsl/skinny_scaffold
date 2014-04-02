@@ -1,0 +1,4 @@
+%h2= "#{<%= singular_instance_variable %>.new_record? ? 'Create' : 'Edit'} <%= human_name %>"
+
+= <%= form_builder_method %> <%= singular_instance_variable %> do |f|
+  # Content here
