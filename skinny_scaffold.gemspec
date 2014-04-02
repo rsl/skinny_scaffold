@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["RSL"]
   spec.email         = ["sconds@gmail.com"]
   spec.description   = %q{Skinny scaffolds for Rails 4}
-  # spec.summary       = %q{}
+  spec.summary       = %q{Quick, Haml-based scaffolds for Rails 4. Opinionated out the arse.}
   spec.homepage      = "https://github.com/rsl/skinny_scaffold"
   spec.license       = "MIT"
 
