@@ -18,7 +18,7 @@ module TemplateMethods
   end
 
   def table_source
-    return 'tabula_rasa_table' if !defined?(TabulaRasa)
+    return 'tabula_rasa_table' if defined?(TabulaRasa)
     'default_table'
   end
 

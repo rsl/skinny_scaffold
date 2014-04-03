@@ -1,6 +1,6 @@
-= skinny_scaffold_form_header <%= plural_instance_variable %>
+= skinny_scaffold_index_header <%= plural_instance_variable %>
 
 <%= table %>
 
 %div
-  = link_to 'New <%= human_name.titleize %>', new_<%= singular_table_name %>_path
+  = skinny_scaffold_link_to_add <%= class_name %>
