@@ -1,56 +1,37 @@
-# # require 'rails/generators/erb/scaffold/scaffold_generator'
+require_relative 'template_methods.rb'
 
-# class SkinnyScaffoldGenerator < Erb::Generators::ScaffoldGenerator
-#   source_root File.expand_path('../templates', __FILE__)
+class SkinnyScaffoldGenerator < Rails::Generators::NamedBase
+  include Rails::Generators::ResourceHelpers
+  include TemplateMethods
 
-#   def copy_view_files
-#     available_views.each do |view|
-#       filename = filename_with_extensions(view)
-#       template filename_with_extensions(view, :erb), File.join('app/views', controller_file_path, filename_with_extensions(view))
-#     end
-#   end
+  source_root File.expand_path('../templates', __FILE__)
 
-# protected
+  def create_view_folder
+    empty_directory File.join("app/views", controller_file_path)
+  end
 
-#   def available_views
-#     %w{index _form new edit}
-#   end
+  def copy_view_files
+    available_views.each do |view|
+      filename = filename_with_extensions(view)
+      template filename_with_extensions(view, :erb), File.join('app/views', controller_file_path, filename_with_extensions(view))
+    end
+  end
 
-#   def handler
-#     :haml
-#   end
+protected
 
-#   def filename_with_extensions(name, local_handler = handler)
-#     [name, format, local_handler].compact.join('.')
-#   end
+  def available_views
+    %w{index _form new edit}
+  end
 
-#   module TemplateMethods
-#     def form_builder_method
-#       return 'simple_form_for' if defined?(SimpleForm)
-#       'form_for'
-#     end
+  def format
+    :html
+  end
 
-#     def plural_instance_variable
-#       "@#{plural_table_name}"
-#     end
+  def handler
+    :haml
+  end
 
-#     def singular_instance_variable
-#       "@#{singular_table_name}"
-#     end
-
-#     def table
-#       ERB.new(table_partial).result binding
-#     end
-
-#     def table_source
-#       return 'tabula_rasa_table' if !defined?(TabulaRasa)
-#       'default_table'
-#     end
-
-#     def table_partial
-#       filename = File.expand_path("lib/generators/skinny_scaffold/templates/partials/#{table_source}.html.erb")
-#       File.read filename
-#     end
-#   end
-#   include TemplateMethods
-# end
+  def filename_with_extensions(name, local_handler = handler)
+    [name, format, local_handler].compact.join('.')
+  end
+end
