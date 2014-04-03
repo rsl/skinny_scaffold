@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/rsl/skinny_scaffold.png)](https://codeclimate.com/github/rsl/skinny_scaffold)
 
-Skinny scaffolds for Rails 4. Currently defaults to Haml but I may add ERB support eventually. Dunno.
+Skinny Haml controller and scaffolds for Rails 4.
 
 ## Installation
 
