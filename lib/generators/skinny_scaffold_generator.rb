@@ -7,7 +7,11 @@ class SkinnyScaffoldGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
 
   def create_view_folder
-    empty_directory File.join("app/views", controller_file_path)
+    empty_directory File.join('app/views', controller_file_path)
+  end
+
+  def copy_helper_file
+    template 'helper.rb', 'app/helpers/skinny_scaffold_helper.rb'
   end
 
   def copy_view_files
